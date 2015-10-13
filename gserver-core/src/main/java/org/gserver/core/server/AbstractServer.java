@@ -3,12 +3,12 @@ package org.gserver.core.server;
 import org.apache.log4j.Logger;
 import org.gserver.core.server.config.Config;
 
-public abstract class Server implements Runnable {
+public abstract class AbstractServer implements Runnable {
 	private int server_id;
 	private String server_name;
 	protected Config config;
 
-	protected Server(Config serverConfig) {
+	protected AbstractServer(Config serverConfig) {
 		this.config = serverConfig;
 		if (this.config != null) {
 			init();
@@ -44,7 +44,7 @@ public abstract class Server implements Runnable {
 		}
 
 		public void run() {
-			Server.this.stop();
+			AbstractServer.this.stop();
 			log.info(this.server_name + " Stop!");
 		}
 	}
