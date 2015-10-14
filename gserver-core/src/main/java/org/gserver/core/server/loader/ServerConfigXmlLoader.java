@@ -48,6 +48,7 @@ public class ServerConfigXmlLoader {
 			}
 			in.close();
 
+			log.info("load server config !");
 			return config;
 		} catch (Exception e) {
 			this.log.error(e);

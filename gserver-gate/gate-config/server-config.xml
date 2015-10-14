@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<servers>
+	<server>
+		<server-name>Gate1</server-name>
+		<server-id>30000</server-id>
+		<server-port>8000</server-port>
+	</server>
+</servers>

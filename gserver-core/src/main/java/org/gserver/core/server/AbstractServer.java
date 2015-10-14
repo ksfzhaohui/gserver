@@ -17,16 +17,17 @@ public abstract class AbstractServer implements Runnable {
 
 	protected void init() {
 		this.server_name = this.config.getName();
-		server_id = this.config.getId();
+		this.server_id = this.config.getId();
 	}
 
+	@Override
 	public void run() {
 		Runtime.getRuntime().addShutdownHook(
 				new Thread(new CloseByExit(this.server_name)));
 	}
 
 	public String getServerName() {
-		return this.server_name;
+		return server_name;
 	}
 
 	public int getServerId() {
@@ -35,6 +36,12 @@ public abstract class AbstractServer implements Runnable {
 
 	protected abstract void stop();
 
+	/**
+	 * 服务器关闭的钩子
+	 * 
+	 * @author zhaohui
+	 * 
+	 */
 	private class CloseByExit implements Runnable {
 		private Logger log = Logger.getLogger(CloseByExit.class);
 		private String server_name;
@@ -43,6 +50,7 @@ public abstract class AbstractServer implements Runnable {
 			this.server_name = server_name;
 		}
 
+		@Override
 		public void run() {
 			AbstractServer.this.stop();
 			log.info(this.server_name + " Stop!");

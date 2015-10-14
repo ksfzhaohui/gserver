@@ -1,5 +1,10 @@
 package org.gserver.core.server;
 
+/**
+ * 服务器类型
+ * @author zhaohui
+ *
+ */
 public enum ServerType {
 
 	GATE_SERVER(1, "gate"), //

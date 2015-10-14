@@ -18,6 +18,7 @@ import org.jboss.netty.channel.ChannelFuture;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 
 /**
+ * 客户端服务器经常去连其他服务器，比如逻辑服务器连接网关服务器
  * 
  * @author zhaohui
  * 
