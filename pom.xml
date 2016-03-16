@@ -54,5 +54,9 @@
 	<modules>
 		<module>gserver-core</module>
 		<module>gserver-gate</module>
+		<module>gserver-logic</module>
+		<module>gserver-redis</module>
+		<module>gserver-services</module>
+		<module>gserver-distribution</module>
 	</modules>
 </project>

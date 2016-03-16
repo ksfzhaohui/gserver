@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<servers>
+	<server>
+		<server-name>App1</server-name>
+		<server-id>2000</server-id>
+		<server-port>8021</server-port>
+	</server>
+</servers>
