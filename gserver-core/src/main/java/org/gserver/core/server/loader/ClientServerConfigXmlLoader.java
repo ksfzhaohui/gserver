@@ -1,6 +1,7 @@
 package org.gserver.core.server.loader;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -24,10 +25,11 @@ public class ClientServerConfigXmlLoader {
 	private Logger log = Logger.getLogger(ClientServerConfigXmlLoader.class);
 
 	public ClientServerConfig load(String file) {
+		InputStream in = null;
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance()
 					.newDocumentBuilder();
-			InputStream in = new FileInputStream(file);
+			in = new FileInputStream(file);
 			Document doc = builder.parse(in);
 			NodeList list = doc.getElementsByTagName("server");
 
@@ -42,71 +44,36 @@ public class ClientServerConfigXmlLoader {
 					} else if ("server-id".equals(childs.item(j).getNodeName())) {
 						config.setId(Integer.parseInt(childs.item(j)
 								.getTextContent()));
-					} else if ("gate-servers".equals(childs.item(j)
+					} else if ("connect-servers".equals(childs.item(j)
 							.getNodeName())) {
 						NodeList servers = childs.item(j).getChildNodes();
 						for (int k = 0; k < servers.getLength(); k++)
-							if ("gate-server".equals(servers.item(k)
+							if ("connect-server".equals(servers.item(k)
 									.getNodeName())) {
 								Node line = servers.item(k);
 								ServerInfo info = new ServerInfo();
 								NodeList attrs = line.getChildNodes();
 								for (int l = 0; l < attrs.getLength(); l++) {
-									if ("server-id".equals(attrs.item(l)
-											.getNodeName()))
-										info.setId(Integer.parseInt(attrs.item(
-												l).getTextContent()));
-									else if ("server-ip".equals(attrs.item(l)
-											.getNodeName()))
-										info.setIp(attrs.item(l)
-												.getTextContent());
-									else if ("server-port".equals(attrs.item(l)
-											.getNodeName())) {
-										info.setPort(Integer.parseInt(attrs
-												.item(l).getTextContent()));
+									String nodeName = attrs.item(l)
+											.getNodeName();
+									String textContent = attrs.item(l)
+											.getTextContent();
+									if ("server-id".equals(nodeName)) {
+										info.setId(Integer
+												.parseInt(textContent));
+									} else if ("server-ip".equals(nodeName)) {
+										info.setIp(textContent);
+									} else if ("server-port".equals(nodeName)) {
+										info.setPort(Integer
+												.parseInt(textContent));
+									} else if ("connect-num".equals(nodeName)) {
+										info.setConnectNum(Integer
+												.parseInt(textContent));
 									}
 								}
 
-								config.getGateServers().add(info);
+								config.getConnectServers().add(info);
 							}
-					} else if ("world-server".equals(childs.item(j)
-							.getNodeName())) {
-						ServerInfo info = new ServerInfo();
-						NodeList attrs = childs.item(j).getChildNodes();
-						for (int l = 0; l < attrs.getLength(); l++) {
-							if ("server-id".equals(attrs.item(l).getNodeName()))
-								info.setId(Integer.parseInt(attrs.item(l)
-										.getTextContent()));
-							else if ("server-ip".equals(attrs.item(l)
-									.getNodeName()))
-								info.setIp(attrs.item(l).getTextContent());
-							else if ("server-port".equals(attrs.item(l)
-									.getNodeName())) {
-								info.setPort(Integer.parseInt(attrs.item(l)
-										.getTextContent()));
-							}
-						}
-
-						config.setWorldServer(info);
-					} else if ("public-server".equals(childs.item(j)
-							.getNodeName())) {
-						ServerInfo info = new ServerInfo();
-						NodeList attrs = childs.item(j).getChildNodes();
-						for (int l = 0; l < attrs.getLength(); l++) {
-							if ("server-id".equals(attrs.item(l).getNodeName()))
-								info.setId(Integer.parseInt(attrs.item(l)
-										.getTextContent()));
-							else if ("server-ip".equals(attrs.item(l)
-									.getNodeName()))
-								info.setIp(attrs.item(l).getTextContent());
-							else if ("server-port".equals(attrs.item(l)
-									.getNodeName())) {
-								info.setPort(Integer.parseInt(attrs.item(l)
-										.getTextContent()));
-							}
-						}
-
-						config.setPublicServers(info);
 					}
 				}
 			}
@@ -117,6 +84,13 @@ public class ClientServerConfigXmlLoader {
 			return config;
 		} catch (Exception e) {
 			this.log.error(e, e);
+		} finally {
+			if (in != null) {
+				try {
+					in.close();
+				} catch (IOException e) {
+				}
+			}
 		}
 		return null;
 	}

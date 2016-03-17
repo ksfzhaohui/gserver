@@ -25,6 +25,11 @@ public class Message {
 		this.data = data;
 	}
 
+	public void setContent(int commandId, byte[] data) {
+		header.setCommandId(commandId);
+		this.data = data;
+	}
+
 	public Object getData() {
 		return data;
 	}

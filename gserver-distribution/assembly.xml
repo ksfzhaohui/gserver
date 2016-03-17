@@ -48,7 +48,7 @@
 		</fileSet>
 
 		<fileSet>
-			<directory>../gserver-app/logic-config</directory>
+			<directory>../gserver-logic/logic-config</directory>
 			<outputDirectory>logic-config</outputDirectory>
 			<includes>
 				<include>*</include>

@@ -16,7 +16,7 @@ public class Header implements Cloneable {
 	/** 用于扩展协议。暂未定义任何值 **/
 	private byte extend2;
 	/** 会话ID **/
-	private String sessionid;
+	private String sessionId;
 	/** 数据包长 **/
 	private int length;
 	/** 命令 **/
@@ -36,19 +36,20 @@ public class Header implements Cloneable {
 
 	}
 
-	public Header(String sessionid) {
+	public Header(String sessionid, int commandId) {
 		this.encode = 0;
 		this.encrypt = 0;
-		this.sessionid = sessionid;
+		this.sessionId = sessionid;
+		this.commandId = commandId;
 	}
 
 	public Header(byte encode, byte encrypt, byte extend1, byte extend2,
-			String sessionid, int length, int commandId) {
+			String sessionId, int length, int commandId) {
 		this.encode = encode;
 		this.encrypt = encrypt;
 		this.extend1 = extend1;
 		this.extend2 = extend2;
-		this.sessionid = sessionid;
+		this.sessionId = sessionId;
 		this.length = length;
 		this.commandId = commandId;
 	}
@@ -85,12 +86,12 @@ public class Header implements Cloneable {
 		this.extend2 = extend2;
 	}
 
-	public String getSessionid() {
-		return sessionid;
+	public String getSessionId() {
+		return sessionId;
 	}
 
-	public void setSessionid(String sessionid) {
-		this.sessionid = sessionid;
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
 	}
 
 	public int getLength() {
@@ -112,7 +113,7 @@ public class Header implements Cloneable {
 	@Override
 	public String toString() {
 		return "header [encode=" + encode + ",encrypt=" + encrypt + ",extend1="
-				+ extend1 + ",extend2=" + extend2 + ",sessionid=" + sessionid
+				+ extend1 + ",extend2=" + extend2 + ",sessionid=" + sessionId
 				+ ",length=" + length + ",commandId=" + commandId + "]";
 	}
 

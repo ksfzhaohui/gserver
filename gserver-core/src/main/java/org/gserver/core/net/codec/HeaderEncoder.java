@@ -24,7 +24,7 @@ public class HeaderEncoder extends OneToOneEncoder {
 		}
 
 		Message message = (Message) msg;
-		ChannelBuffer buffer = (ChannelBuffer) message.getData();
+		byte[] buffer = (byte[]) message.getData();
 		Header header = message.getHeader();
 
 		ChannelBuffer allBuffer = ChannelBuffers.dynamicBuffer();
@@ -33,8 +33,8 @@ public class HeaderEncoder extends OneToOneEncoder {
 		allBuffer.writeByte(header.getEncrypt());
 		allBuffer.writeByte(header.getExtend1());
 		allBuffer.writeByte(header.getExtend2());
-		allBuffer.writeBytes(header.getSessionid().getBytes());
-		allBuffer.writeInt(buffer.readableBytes());
+		allBuffer.writeBytes(header.getSessionId().getBytes());
+		allBuffer.writeInt(buffer.length);
 		allBuffer.writeInt(header.getCommandId());
 		allBuffer.writeBytes(buffer);
 		return allBuffer;

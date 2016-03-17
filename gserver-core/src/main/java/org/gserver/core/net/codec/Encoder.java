@@ -7,9 +7,8 @@ import org.jboss.netty.handler.codec.oneone.OneToOneEncoder;
 
 /**
  * 编码器
- * 
  * @author zhaohui
- * 
+ *
  */
 public abstract class Encoder extends OneToOneEncoder {
 
@@ -24,7 +23,6 @@ public abstract class Encoder extends OneToOneEncoder {
 
 	/**
 	 * 将逻辑对象转换成二进制数据
-	 * 
 	 * @param msg
 	 * @throws Exception
 	 */

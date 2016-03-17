@@ -1,4 +1,4 @@
-package org.gserver.gate;
+package org.gserver.logic;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,10 +14,12 @@ public class SpringContainer {
 	private ApplicationContext ctx = null;
 
 	private SpringContainer() {
+
 	}
 
 	public void loadSpring() {
-		String[] cfigPath = { "gs-handlers.xml" };
+		String[] cfigPath = { "gs-context.xml", "gs-handlers.xml",
+				"gs-redis.xml" };
 		ctx = new ClassPathXmlApplicationContext(cfigPath);
 	}
 

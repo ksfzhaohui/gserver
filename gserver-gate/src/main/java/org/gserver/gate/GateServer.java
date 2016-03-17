@@ -7,7 +7,13 @@ public class GateServer extends Server {
 
 	private static final String DEFUALT_SERVER_CONFIG = "gate-config/server-config.xml";
 
-	public GateServer() {
+	private static GateServer gateServer = new GateServer();
+
+	public static GateServer getInstance() {
+		return gateServer;
+	}
+
+	private GateServer() {
 		this(DEFUALT_SERVER_CONFIG);
 	}
 
@@ -18,7 +24,6 @@ public class GateServer extends Server {
 	@Override
 	protected void init() {
 		super.init();
-		SpringContainer.getInstance().loadSpring();
 	}
 
 	@Override

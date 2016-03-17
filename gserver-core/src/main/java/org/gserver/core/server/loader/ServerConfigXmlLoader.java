@@ -1,6 +1,7 @@
 package org.gserver.core.server.loader;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -22,10 +23,11 @@ public class ServerConfigXmlLoader {
 	private Logger log = Logger.getLogger(ServerConfigXmlLoader.class);
 
 	public ServerConfig load(String file) {
+		InputStream in = null;
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance()
 					.newDocumentBuilder();
-			InputStream in = new FileInputStream(file);
+			in = new FileInputStream(file);
 			Document doc = builder.parse(in);
 			NodeList list = doc.getElementsByTagName("server");
 
@@ -46,12 +48,18 @@ public class ServerConfigXmlLoader {
 					}
 				}
 			}
-			in.close();
 
 			log.info("load server config !");
 			return config;
 		} catch (Exception e) {
 			this.log.error(e);
+		} finally {
+			if (in != null) {
+				try {
+					in.close();
+				} catch (IOException e) {
+				}
+			}
 		}
 		return null;
 	}

@@ -1,4 +1,4 @@
-package org.gserver.gate;
+package org.gserver.gate.clientServer;
 
 import org.gserver.core.net.codec.HeaderDecoder;
 import org.gserver.core.net.codec.HeaderEncoder;
@@ -6,11 +6,11 @@ import org.jboss.netty.channel.ChannelPipeline;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.jboss.netty.channel.Channels;
 
-public class GatePipelineFactory implements ChannelPipelineFactory {
+public class ConnectPipelineFactory implements ChannelPipelineFactory {
 
 	@Override
 	public ChannelPipeline getPipeline() throws Exception {
-		final GateHandler handler = new GateHandler();
+		final ConnectHandler handler = new ConnectHandler();
 		ChannelPipeline pipeline = Channels.pipeline();
 		pipeline.addLast("decoder", new HeaderDecoder());
 		pipeline.addLast("encoder", new HeaderEncoder());

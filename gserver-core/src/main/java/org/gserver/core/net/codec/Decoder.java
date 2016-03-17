@@ -7,11 +7,10 @@ import org.jboss.netty.handler.codec.oneone.OneToOneDecoder;
 
 /**
  * 解码器
- * 
+ *
  * 将二进制数据转换成需要的业务逻辑对象
- * 
  * @author zhaohui
- * 
+ *
  */
 public abstract class Decoder extends OneToOneDecoder {
 
@@ -30,8 +29,8 @@ public abstract class Decoder extends OneToOneDecoder {
 	/**
 	 * 将二进制数据转换成逻辑对象
 	 * 
-	 * @param msg
-	 *            请求对象
+	 * @param msg   
+	 * 					请求对象
 	 * @throws Exception
 	 */
 	protected abstract Object transformData(Object msg) throws Exception;

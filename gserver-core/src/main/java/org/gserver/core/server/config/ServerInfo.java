@@ -7,6 +7,8 @@ public class ServerInfo {
 	private String ip;
 	/** 端口 **/
 	private int port;
+	/** 建立连接的数量 **/
+	private int connectNum;
 
 	public int getId() {
 		return this.id;
@@ -31,4 +33,13 @@ public class ServerInfo {
 	public void setPort(int port) {
 		this.port = port;
 	}
+
+	public int getConnectNum() {
+		return connectNum;
+	}
+
+	public void setConnectNum(int connectNum) {
+		this.connectNum = connectNum;
+	}
+
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="jedisConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxTotal" value="${redis.pool.maxTotal}"></property>
+		<property name="maxIdle" value="${redis.pool.maxIdle}"></property>
+		<property name="maxWaitMillis" value="${redis.pool.maxWaitMillis}"></property>
+		<property name="testOnBorrow" value="${redis.pool.testOnBorrow}"></property>
+		<property name="testOnReturn" value="${redis.pool.testOnReturn}"></property>
+	</bean>
+
+	<bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+		<constructor-arg index="0" ref="jedisConfig"></constructor-arg>
+		<constructor-arg index="1" value="${redis.server.ip}"></constructor-arg>
+		<constructor-arg index="2" value="${redis.server.port}"></constructor-arg>
+	</bean>
+
+	<bean id="redisFactory" class="org.gserver.redis.RedisFactory">
+		<property name="jedisPool" ref="jedisPool"></property>
+	</bean>
+
+	<bean id="redisAccessor" class="org.gserver.redis.RedisAccessor">
+		<property name="redisFactory" ref="redisFactory"></property>
+	</bean>
+</beans>

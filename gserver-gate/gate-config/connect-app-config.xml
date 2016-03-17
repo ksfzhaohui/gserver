@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<servers>
+	<server>
+		<server-name>Gate1</server-name>
+		<server-id>1000</server-id>
+		<connect-servers>
+			<connect-server>
+				<server-id>2000</server-id>
+				<server-ip>127.0.0.1</server-ip>
+				<server-port>8021</server-port>
+				<connect-num>5</connect-num>
+			</connect-server>
+		</connect-servers>
+	</server>
+</servers>

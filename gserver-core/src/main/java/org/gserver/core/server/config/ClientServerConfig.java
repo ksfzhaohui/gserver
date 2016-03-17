@@ -6,39 +6,21 @@ import java.util.List;
 /**
  * 客戶端server
  * 
- * 逻辑服务器经常去连的服务器:gateServer,worldServer,publicServer 
- * 此时逻辑服务器被称为clientServer
+ * 逻辑服务器经常去连的服务器:gateServer,worldServer,publicServer 此时逻辑服务器被称为clientServer
  * 
  * @author zhaohui
  * 
  */
 public class ClientServerConfig extends Config {
 
-	private List<ServerInfo> gateServers = new ArrayList<ServerInfo>();
-	private ServerInfo worldServer;
-	private ServerInfo publicServer;
+	private List<ServerInfo> connectServers = new ArrayList<ServerInfo>();
 
-	public List<ServerInfo> getGateServers() {
-		return this.gateServers;
+	public List<ServerInfo> getConnectServers() {
+		return connectServers;
 	}
 
-	public void setGateServers(List<ServerInfo> gateServers) {
-		this.gateServers = gateServers;
+	public void setConnectServers(List<ServerInfo> connectServers) {
+		this.connectServers = connectServers;
 	}
 
-	public ServerInfo getWorldServer() {
-		return this.worldServer;
-	}
-
-	public void setWorldServer(ServerInfo worldServer) {
-		this.worldServer = worldServer;
-	}
-
-	public ServerInfo getPublicServer() {
-		return this.publicServer;
-	}
-
-	public void setPublicServers(ServerInfo publicServer) {
-		this.publicServer = publicServer;
-	}
 }
