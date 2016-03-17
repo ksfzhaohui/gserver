@@ -1,0 +1,23 @@
+2016-03-17 15:13:14 [main] 52::: INFO  org.gserver.core.server.loader.ServerConfigXmlLoader - load server config !
+2016-03-17 15:13:14 [main] 83::: INFO  org.gserver.core.server.loader.ClientServerConfigXmlLoader - load server config !
+2016-03-17 15:13:14 [Thread-0] 36::: INFO  org.gserver.core.server.impl.Server - Server Gate1 Start At Port 8000
+2016-03-17 15:13:14 [Thread-2] 107::: INFO  org.gserver.core.server.impl.ClientServer - connect ip:127.0.0.1,port:8021
+2016-03-17 15:13:14 [Thread-2] 107::: INFO  org.gserver.core.server.impl.ClientServer - connect ip:127.0.0.1,port:8021
+2016-03-17 15:13:14 [Thread-2] 107::: INFO  org.gserver.core.server.impl.ClientServer - connect ip:127.0.0.1,port:8021
+2016-03-17 15:13:14 [Thread-2] 107::: INFO  org.gserver.core.server.impl.ClientServer - connect ip:127.0.0.1,port:8021
+2016-03-17 15:13:14 [Thread-2] 107::: INFO  org.gserver.core.server.impl.ClientServer - connect ip:127.0.0.1,port:8021
+2016-03-17 15:14:45 [New I/O  worker #10] 66::: INFO  org.gserver.gate.clientServer.ConnectHandler - channelClosed:[id: 0x09ac5f13, /127.0.0.1:16325 :> /127.0.0.1:8021]
+2016-03-17 15:14:45 [New I/O  worker #1] 66::: INFO  org.gserver.gate.clientServer.ConnectHandler - channelClosed:[id: 0x09ba6076, /127.0.0.1:16301 :> /127.0.0.1:8021]
+2016-03-17 15:14:45 [New I/O  worker #6] 66::: INFO  org.gserver.gate.clientServer.ConnectHandler - channelClosed:[id: 0x4a738d08, /127.0.0.1:16315 :> /127.0.0.1:8021]
+2016-03-17 15:14:45 [New I/O  worker #4] 66::: INFO  org.gserver.gate.clientServer.ConnectHandler - channelClosed:[id: 0x56d90453, /127.0.0.1:16310 :> /127.0.0.1:8021]
+2016-03-17 15:14:45 [New I/O  worker #8] 66::: INFO  org.gserver.gate.clientServer.ConnectHandler - channelClosed:[id: 0x2eb0a3f5, /127.0.0.1:16320 :> /127.0.0.1:8021]
+2016-03-17 15:14:45 [New I/O  worker #2] 67::: INFO  org.gserver.gate.GateHandler - channel is closed[id: 0x13e4a47e, /127.0.0.1:16335 :> /127.0.0.1:8000]
+2016-03-17 15:15:17 [main] 52::: INFO  org.gserver.core.server.loader.ServerConfigXmlLoader - load server config !
+2016-03-17 15:15:17 [main] 83::: INFO  org.gserver.core.server.loader.ClientServerConfigXmlLoader - load server config !
+2016-03-17 15:15:17 [Thread-0] 36::: INFO  org.gserver.core.server.impl.Server - Server Gate1 Start At Port 8000
+2016-03-17 15:15:17 [Thread-2] 107::: INFO  org.gserver.core.server.impl.ClientServer - connect ip:127.0.0.1,port:8021
+2016-03-17 15:15:17 [Thread-2] 107::: INFO  org.gserver.core.server.impl.ClientServer - connect ip:127.0.0.1,port:8021
+2016-03-17 15:15:17 [Thread-2] 107::: INFO  org.gserver.core.server.impl.ClientServer - connect ip:127.0.0.1,port:8021
+2016-03-17 15:15:17 [Thread-2] 107::: INFO  org.gserver.core.server.impl.ClientServer - connect ip:127.0.0.1,port:8021
+2016-03-17 15:15:17 [Thread-2] 107::: INFO  org.gserver.core.server.impl.ClientServer - connect ip:127.0.0.1,port:8021
+2016-03-17 15:16:20 [New I/O  worker #2] 67::: INFO  org.gserver.gate.GateHandler - channel is closed[id: 0x5e785d65, /127.0.0.1:16400 :> /127.0.0.1:8000]

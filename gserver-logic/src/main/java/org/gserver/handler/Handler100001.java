@@ -10,7 +10,7 @@ import protocol.ServerClientProtocol.S2CLogin;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 
-public class Handler100 implements IHandler {
+public class Handler100001 implements IHandler {
 
 	@Override
 	public void execute(Message request, Message response) throws GsException,
