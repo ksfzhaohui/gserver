@@ -1,4 +1,4 @@
-package org.gserver.redis;
+package org.gserver.redis.accessor;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

@@ -1,6 +1,7 @@
-package org.gserver.redis;
+package org.gserver.redis.accessor;
 
 import org.apache.log4j.Logger;
+
 import redis.clients.jedis.Jedis;
 
 public abstract class AbstractRedisAccessor {

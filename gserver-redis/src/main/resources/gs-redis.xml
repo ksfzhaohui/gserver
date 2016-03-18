@@ -15,11 +15,15 @@
 		<constructor-arg index="2" value="${redis.server.port}"></constructor-arg>
 	</bean>
 
-	<bean id="redisFactory" class="org.gserver.redis.RedisFactory">
+	<bean id="redisFactory" class="org.gserver.redis.accessor.RedisFactory">
 		<property name="jedisPool" ref="jedisPool"></property>
 	</bean>
 
-	<bean id="redisAccessor" class="org.gserver.redis.RedisAccessor">
+	<bean id="redisAccessor" class="org.gserver.redis.accessor.RedisAccessor">
 		<property name="redisFactory" ref="redisFactory"></property>
+	</bean>
+
+	<bean id="redisTemplateMethod" class="org.gserver.redis.RedisTemplateMethod">
+		<property name="redisAccessor" ref="redisAccessor"></property>
 	</bean>
 </beans>
