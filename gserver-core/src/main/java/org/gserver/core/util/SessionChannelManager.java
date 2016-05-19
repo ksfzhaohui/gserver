@@ -14,14 +14,14 @@ public class SessionChannelManager {
 
 	public static SessionChannelManager instance = new SessionChannelManager();
 
-	private Map<String, Channel> sessionChannelMap = new ConcurrentHashMap<String, Channel>();
-	private Map<Channel, String> channelSessionMap = new ConcurrentHashMap<Channel, String>();
+	private Map<Integer, Channel> sessionChannelMap = new ConcurrentHashMap<Integer, Channel>();
+	private Map<Channel, Integer> channelSessionMap = new ConcurrentHashMap<Channel, Integer>();
 
 	public static SessionChannelManager getInstance() {
 		return instance;
 	}
 
-	public void addChannle(String sessionId, Channel channel) {
+	public void addChannle(Integer sessionId, Channel channel) {
 		synchronized (this) {
 			sessionChannelMap.put(sessionId, channel);
 			channelSessionMap.put(channel, sessionId);
@@ -34,7 +34,7 @@ public class SessionChannelManager {
 	 * @param sessionId
 	 * @return
 	 */
-	public Channel getChannel(String sessionId) {
+	public Channel getChannel(Integer sessionId) {
 		return sessionChannelMap.get(sessionId);
 	}
 
@@ -44,7 +44,7 @@ public class SessionChannelManager {
 	 * @param channel
 	 * @return
 	 */
-	public String getSessionId(Channel channel) {
+	public Integer getSessionId(Channel channel) {
 		return channelSessionMap.get(channel);
 	}
 

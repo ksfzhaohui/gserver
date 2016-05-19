@@ -5,8 +5,9 @@ import org.gserver.core.net.Message;
 import org.gserver.core.threadPool.AbstractWork;
 import org.gserver.core.threadPool.executor.OrderedQueuePoolExecutor;
 import org.gserver.core.util.SessionChannelManager;
-import org.gserver.core.util.SessionUtil;
 import org.gserver.gate.clientServer.ConnectAppServer;
+import org.gserver.services.util.CommandEnumUtil;
+import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ChannelStateEvent;
 import org.jboss.netty.channel.ExceptionEvent;
@@ -28,16 +29,19 @@ public class GateHandler extends SimpleChannelHandler {
 	@Override
 	public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e)
 			throws Exception {
-		String sessionId = SessionUtil.generateSessionId();
-		SessionChannelManager.getInstance().addChannle(sessionId,
-				e.getChannel());
+		Channel channel = e.getChannel();
+		SessionChannelManager.getInstance()
+				.addChannle(channel.getId(), channel);
 	}
 
 	@Override
 	public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)
 			throws Exception {
 		Message request = (Message) e.getMessage();
-		String sessionId = SessionChannelManager.getInstance().getSessionId(
+		if (!CommandEnumUtil.isValid(request.getCommand())) {
+			return;
+		}
+		int sessionId = SessionChannelManager.getInstance().getSessionId(
 				e.getChannel());
 		request.getHeader().setSessionId(sessionId);
 		recvExcutor.addTask(sessionId, new MWork(request));

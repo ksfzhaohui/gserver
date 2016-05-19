@@ -19,7 +19,7 @@ public class OrderedQueuePoolExecutor extends ThreadPoolExecutor {
 	protected static Logger log = Logger
 			.getLogger(OrderedQueuePoolExecutor.class);
 
-	private OrderedQueuePool<String, AbstractWork> pool = new OrderedQueuePool<String, AbstractWork>();
+	private OrderedQueuePool<Integer, AbstractWork> pool = new OrderedQueuePool<Integer, AbstractWork>();
 
 	private String name;
 	private int maxQueueSize;
@@ -42,7 +42,7 @@ public class OrderedQueuePoolExecutor extends ThreadPoolExecutor {
 	 * @param value
 	 * @return
 	 */
-	public boolean addTask(String key, AbstractWork task) {
+	public boolean addTask(Integer key, AbstractWork task) {
 		TasksQueue<AbstractWork> queue = pool.getTasksQueue(key);
 		boolean run = false;
 		boolean result = false;

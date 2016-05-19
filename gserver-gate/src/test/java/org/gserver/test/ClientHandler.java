@@ -23,7 +23,7 @@ public class ClientHandler extends SimpleChannelHandler {
 		C2SLogin.Builder c2sLogin = C2SLogin.newBuilder().setLogin(login);
 
 		Header header = new Header();
-		header.setSessionId("11111111111111111111111111111111");
+		header.setSessionId(1);
 		header.setCommandId(CommandEnum.C2S_LOGIN.getId());
 		Message message = new Message(header, c2sLogin.build().toByteArray());
 		e.getChannel().write(message);

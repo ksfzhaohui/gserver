@@ -17,7 +17,7 @@ import org.jboss.netty.handler.codec.frame.FrameDecoder;
  * 		encrypt  		byte
  * 		extend1  		byte
  * 		extend2  		byte
- * 		sessionid  		string length[32]
+ * 		sessionid  		int
  * 		length  		int
  * 		commandId  		int
  * }
@@ -47,9 +47,7 @@ public class HeaderDecoder extends FrameDecoder {
 		byte encrypt = buffer.readByte();
 		byte extend1 = buffer.readByte();
 		byte extend2 = buffer.readByte();
-		byte sessionByte[] = new byte[32];
-		buffer.readBytes(sessionByte);
-		String sessionid = new String(sessionByte);
+		int sessionid = buffer.readInt();
 		int length = buffer.readInt();
 		int commandId = buffer.readInt();
 

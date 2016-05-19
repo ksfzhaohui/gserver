@@ -13,14 +13,14 @@ public class SessionPidManager {
 
 	private static SessionPidManager instance = new SessionPidManager();
 
-	private Map<String, Long> sessionPidMap = new ConcurrentHashMap<String, Long>();
-	private Map<Long, String> pidSessionMap = new ConcurrentHashMap<Long, String>();
+	private Map<Integer, Long> sessionPidMap = new ConcurrentHashMap<Integer, Long>();
+	private Map<Long, Integer> pidSessionMap = new ConcurrentHashMap<Long, Integer>();
 
 	public static SessionPidManager getInstance() {
 		return instance;
 	}
 
-	public void setSessionPid(String sessionId, long pid) {
+	public void setSessionPid(int sessionId, long pid) {
 		synchronized (this) {
 			sessionPidMap.put(sessionId, pid);
 			pidSessionMap.put(pid, sessionId);
@@ -29,7 +29,7 @@ public class SessionPidManager {
 
 	public void removePidSession(long pid) {
 		synchronized (this) {
-			String sessionId = pidSessionMap.get(pid);
+			Integer sessionId = pidSessionMap.get(pid);
 			if (sessionId != null) {
 				pidSessionMap.remove(pid);
 				sessionPidMap.remove(sessionId);
@@ -41,7 +41,7 @@ public class SessionPidManager {
 		return sessionPidMap.get(sessionId);
 	}
 
-	public String getSessionId(long pid) {
+	public int getSessionId(long pid) {
 		return pidSessionMap.get(pid);
 	}
 }

@@ -41,7 +41,7 @@ public class LogicHandler extends SimpleChannelHandler {
 	public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)
 			throws Exception {
 		Message request = (Message) e.getMessage();
-		String sessionId = request.getHeader().getSessionId();
+		int sessionId = request.getHeader().getSessionId();
 		recvExcutor.addTask(sessionId, new MWork(request, e.getChannel()));
 	}
 

@@ -46,4 +46,8 @@ public class Message {
 		this.header = header;
 	}
 
+	public int getCommand() {
+		return getHeader().getCommandId();
+	}
+
 }

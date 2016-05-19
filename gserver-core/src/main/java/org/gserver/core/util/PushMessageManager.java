@@ -25,7 +25,7 @@ public class PushMessageManager {
 	 * @param data
 	 *            二进制数据包
 	 */
-	public static void pushMessage(String sessionId, int cmdId, byte[] data) {
+	public static void pushMessage(Integer sessionId, int cmdId, byte[] data) {
 		if (sessionId != null) {
 			Header header = new Header(sessionId, cmdId);
 			Message message = new Message(header, data);
@@ -35,7 +35,7 @@ public class PushMessageManager {
 	}
 
 	public static void pushMessage(long pid, int cmdId, byte[] data) {
-		String sessionId = SessionPidManager.getInstance().getSessionId(pid);
+		Integer sessionId = SessionPidManager.getInstance().getSessionId(pid);
 		pushMessage(sessionId, cmdId, data);
 	}
 

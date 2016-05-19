@@ -33,7 +33,7 @@ public class HeaderEncoder extends OneToOneEncoder {
 		allBuffer.writeByte(header.getEncrypt());
 		allBuffer.writeByte(header.getExtend1());
 		allBuffer.writeByte(header.getExtend2());
-		allBuffer.writeBytes(header.getSessionId().getBytes());
+		allBuffer.writeInt(header.getSessionId());
 		allBuffer.writeInt(buffer.length);
 		allBuffer.writeInt(header.getCommandId());
 		allBuffer.writeBytes(buffer);
