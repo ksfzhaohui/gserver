@@ -53,4 +53,10 @@ public interface IRedisTemplateMethod {
 	public <T extends AbstractRedisBean> void delete(long beanId, Class<T> type);
 
 	public <T extends AbstractRedisBean> void delete(String key);
+	
+	public Long hset(String key, String field, String value);
+
+	public String hget(String key, String field);
+
+	public Long hdel(final String key, final String field);
 }

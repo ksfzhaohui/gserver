@@ -3,6 +3,12 @@ package org.gserver.gate;
 import org.gserver.core.server.impl.Server;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 
+/**
+ * 网关服务器
+ * 
+ * @author zhaohui
+ * 
+ */
 public class GateServer extends Server {
 
 	private static final String DEFUALT_SERVER_CONFIG = "gate-config/server-config.xml";

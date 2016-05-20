@@ -53,7 +53,7 @@ public class SessionChannelManager {
 	 * 
 	 * @param sessionId
 	 */
-	public void removeChannel(String sessionId) {
+	public void removeChannel(int sessionId) {
 		synchronized (this) {
 			Channel channel = sessionChannelMap.get(sessionId);
 			if (channel != null) {
@@ -63,4 +63,13 @@ public class SessionChannelManager {
 		}
 	}
 
+	public void removeChannel(Channel channel) {
+		synchronized (this) {
+			Integer sessionId = channelSessionMap.get(channel);
+			if (sessionId != null) {
+				sessionChannelMap.remove(sessionId);
+			}
+			channelSessionMap.remove(channel);
+		}
+	}
 }

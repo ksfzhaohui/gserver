@@ -32,6 +32,7 @@ public class GateHandler extends SimpleChannelHandler {
 		Channel channel = e.getChannel();
 		SessionChannelManager.getInstance()
 				.addChannle(channel.getId(), channel);
+		channel.getCloseFuture().addListener(new ChannelCloseListener());
 	}
 
 	@Override

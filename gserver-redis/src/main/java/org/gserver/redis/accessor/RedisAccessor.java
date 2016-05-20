@@ -70,4 +70,33 @@ public class RedisAccessor extends AbstractRedisAccessor implements
 			}
 		});
 	}
+
+	@Override
+	public Long hset(final String key, final String field, final String value) {
+		return execute(new RedisCallback<Long>() {
+			@Override
+			public Long doIt(Jedis jedis) {
+				return jedis.hset(key, field, value);
+			}
+		});
+	}
+
+	@Override
+	public String hget(final String key, final String field) {
+		return execute(new RedisCallback<String>() {
+			@Override
+			public String doIt(Jedis jedis) {
+				return jedis.hget(key, field);
+			}
+		});
+	}
+	
+	public Long hdel(final String key, final String field) {
+		return execute(new RedisCallback<Long>() {
+			@Override
+			public Long doIt(Jedis jedis) {
+				return jedis.hdel(key, field);
+			}
+		});
+	}
 }

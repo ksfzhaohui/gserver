@@ -48,4 +48,10 @@ public interface IRedisAccessor {
 	 */
 	public void subscribe(final JedisPubSub listener, final String... channels);
 
+	public Long hset(String key, String field, String value);
+
+	public String hget(String key, String field);
+
+	public Long hdel(final String key, final String field);
+
 }

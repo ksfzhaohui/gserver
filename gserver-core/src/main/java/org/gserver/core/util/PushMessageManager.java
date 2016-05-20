@@ -12,8 +12,9 @@ import org.jboss.netty.channel.Channel;
  * 
  */
 public class PushMessageManager {
-	
-	private final static Logger logger = Logger.getLogger(PushMessageManager.class);
+
+	private final static Logger logger = Logger
+			.getLogger(PushMessageManager.class);
 
 	/**
 	 * 推送消息
@@ -34,8 +35,9 @@ public class PushMessageManager {
 		}
 	}
 
-	public static void pushMessage(long pid, int cmdId, byte[] data) {
-		Integer sessionId = SessionPidManager.getInstance().getSessionId(pid);
+	public static void pushMessage(long roleId, int cmdId, byte[] data) {
+		Integer sessionId = SessionPlayerManager.getInstance()
+				.getSessionId(roleId);
 		pushMessage(sessionId, cmdId, data);
 	}
 

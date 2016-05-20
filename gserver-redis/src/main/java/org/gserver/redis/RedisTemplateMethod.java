@@ -125,4 +125,19 @@ public class RedisTemplateMethod implements IRedisTemplateMethod {
 	public <T extends AbstractRedisBean> void delete(String key) {
 		redisAccessor.deleteKey(key);
 	}
+
+	@Override
+	public Long hset(String key, String field, String value) {
+		return redisAccessor.hset(key, field, value);
+	}
+
+	@Override
+	public String hget(String key, String field) {
+		return redisAccessor.hget(key, field);
+	}
+
+	@Override
+	public Long hdel(String key, String field) {
+		return redisAccessor.hdel(key, field);
+	}
 }
