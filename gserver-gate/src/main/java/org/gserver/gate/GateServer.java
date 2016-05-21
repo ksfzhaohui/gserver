@@ -1,6 +1,8 @@
 package org.gserver.gate;
 
 import org.gserver.core.server.impl.Server;
+import org.gserver.util.ServerType;
+import org.gserver.util.SpringContainer;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 
 /**
@@ -30,6 +32,7 @@ public class GateServer extends Server {
 	@Override
 	protected void init() {
 		super.init();
+		SpringContainer.getInstance().loadSpring(ServerType.GATE);
 	}
 
 	@Override

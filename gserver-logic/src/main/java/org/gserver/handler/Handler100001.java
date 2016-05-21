@@ -3,7 +3,7 @@ package org.gserver.handler;
 import org.gserver.core.exception.GsException;
 import org.gserver.core.handler.IHandler;
 import org.gserver.core.net.Message;
-import org.gserver.services.util.CommandEnum;
+import org.gserver.util.CommandEnum;
 
 import protocol.ClientServerProtocol.C2SLogin;
 import protocol.ServerClientProtocol.S2CLogin;

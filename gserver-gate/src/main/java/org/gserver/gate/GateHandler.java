@@ -6,7 +6,7 @@ import org.gserver.core.threadPool.AbstractWork;
 import org.gserver.core.threadPool.executor.OrderedQueuePoolExecutor;
 import org.gserver.core.util.SessionChannelManager;
 import org.gserver.gate.clientServer.ConnectAppServer;
-import org.gserver.services.util.CommandEnumUtil;
+import org.gserver.util.CommandEnumUtil;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ChannelStateEvent;

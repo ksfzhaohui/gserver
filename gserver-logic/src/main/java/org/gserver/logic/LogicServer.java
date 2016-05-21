@@ -1,6 +1,8 @@
 package org.gserver.logic;
 
 import org.gserver.core.server.impl.Server;
+import org.gserver.util.ServerType;
+import org.gserver.util.SpringContainer;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 
 public class LogicServer extends Server {
@@ -18,7 +20,7 @@ public class LogicServer extends Server {
 	@Override
 	protected void init() {
 		super.init();
-		SpringContainer.getInstance().loadSpring();
+		SpringContainer.getInstance().loadSpring(ServerType.LOGIC);
 	}
 
 	@Override

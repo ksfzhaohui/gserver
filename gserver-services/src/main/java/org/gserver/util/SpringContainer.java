@@ -1,4 +1,7 @@
-package org.gserver.logic;
+package org.gserver.util;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -17,10 +20,18 @@ public class SpringContainer {
 
 	}
 
-	public void loadSpring() {
-		String[] cfigPath = { "gs-context.xml", "gs-handlers.xml",
-				"gs-redis.xml" };
-		ctx = new ClassPathXmlApplicationContext(cfigPath);
+	public void loadSpring(ServerType type) {
+		List<String> cfigList = new ArrayList<String>();
+		if (type == ServerType.GATE) {
+			cfigList.add("gs-application.xml");
+		} else if (type == ServerType.LOGIC) {
+			cfigList.add("gs-handlers.xml");
+		}
+		cfigList.add("gs-context.xml");
+		cfigList.add("gs-service.xml");
+		cfigList.add("gs-redis.xml");
+		ctx = new ClassPathXmlApplicationContext(
+				cfigList.toArray(new String[] {}));
 	}
 
 	public static SpringContainer getInstance() {

@@ -1,4 +1,4 @@
-package org.gserver.services.util;
+package org.gserver.util;
 
 import java.util.HashMap;
 import java.util.Map;

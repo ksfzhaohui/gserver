@@ -2,7 +2,7 @@ package org.gserver.test;
 
 import org.gserver.core.net.Header;
 import org.gserver.core.net.Message;
-import org.gserver.services.util.CommandEnum;
+import org.gserver.util.CommandEnum;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ChannelStateEvent;
 import org.jboss.netty.channel.MessageEvent;

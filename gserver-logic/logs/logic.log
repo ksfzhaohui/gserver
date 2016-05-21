@@ -16,3 +16,33 @@
 2016-03-18 16:26:26 [main] 178::: INFO  org.springframework.core.io.support.PropertiesLoaderSupport - Loading properties file from class path resource [redis.properties]
 2016-03-18 16:26:26 [main] 414::: INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4ce32802: defining beans [propertyConfigurer,handler100001,jedisConfig,jedisPool,redisFactory,redisAccessor,redisTemplateMethod]; root of factory hierarchy
 2016-03-18 16:26:27 [Thread-3] 36::: INFO  org.gserver.core.server.impl.Server - Server App1 Start At Port 8021
+2016-05-21 15:26:57 [main] 52::: INFO  org.gserver.core.server.loader.ServerConfigXmlLoader - load server config !
+2016-05-21 15:26:57 [main] 412::: INFO  org.springframework.context.support.AbstractApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@b89838: display name [org.springframework.context.support.ClassPathXmlApplicationContext@b89838]; startup date [Sat May 21 15:26:57 CST 2016]; root of context hierarchy
+2016-05-21 15:26:57 [main] 323::: INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [gs-context.xml]
+2016-05-21 15:26:57 [main] 323::: INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [gs-service.xml]
+2016-05-21 15:26:58 [main] 323::: INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [gs-redis.xml]
+2016-05-21 15:26:58 [main] 323::: INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [gs-handlers.xml]
+2016-05-21 15:26:58 [main] 427::: INFO  org.springframework.context.support.AbstractApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@b89838]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1b26af3
+2016-05-21 15:26:58 [main] 178::: INFO  org.springframework.core.io.support.PropertiesLoaderSupport - Loading properties file from class path resource [redis.properties]
+2016-05-21 15:26:58 [main] 414::: INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1b26af3: defining beans [propertyConfigurer,sessionService,jedisConfig,jedisPool,redisFactory,redisAccessor,redisTemplateMethod,handler100001]; root of factory hierarchy
+2016-05-21 15:26:58 [Thread-3] 36::: INFO  org.gserver.core.server.impl.Server - Server App1 Start At Port 8021
+2016-05-21 15:27:58 [main] 52::: INFO  org.gserver.core.server.loader.ServerConfigXmlLoader - load server config !
+2016-05-21 15:27:58 [main] 412::: INFO  org.springframework.context.support.AbstractApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@b89838: display name [org.springframework.context.support.ClassPathXmlApplicationContext@b89838]; startup date [Sat May 21 15:27:58 CST 2016]; root of context hierarchy
+2016-05-21 15:27:59 [main] 323::: INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [gs-handlers.xml]
+2016-05-21 15:27:59 [main] 323::: INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [gs-context.xml]
+2016-05-21 15:27:59 [main] 323::: INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [gs-service.xml]
+2016-05-21 15:27:59 [main] 323::: INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [gs-redis.xml]
+2016-05-21 15:27:59 [main] 427::: INFO  org.springframework.context.support.AbstractApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@b89838]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1b26af3
+2016-05-21 15:27:59 [main] 178::: INFO  org.springframework.core.io.support.PropertiesLoaderSupport - Loading properties file from class path resource [redis.properties]
+2016-05-21 15:27:59 [main] 414::: INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1b26af3: defining beans [handler100001,propertyConfigurer,sessionService,jedisConfig,jedisPool,redisFactory,redisAccessor,redisTemplateMethod]; root of factory hierarchy
+2016-05-21 15:27:59 [Thread-3] 36::: INFO  org.gserver.core.server.impl.Server - Server App1 Start At Port 8021
+2016-05-21 15:27:59 [New I/O  worker #2] 38::: INFO  org.gserver.logic.LogicHandler - connected:[id: 0x00b8f8eb, /127.0.0.1:53226 => /127.0.0.1:8021]
+2016-05-21 15:27:59 [New I/O  worker #1] 38::: INFO  org.gserver.logic.LogicHandler - connected:[id: 0x01833eca, /127.0.0.1:53219 => /127.0.0.1:8021]
+2016-05-21 15:27:59 [New I/O  worker #3] 38::: INFO  org.gserver.logic.LogicHandler - connected:[id: 0x00f6438d, /127.0.0.1:53229 => /127.0.0.1:8021]
+2016-05-21 15:27:59 [New I/O  worker #4] 38::: INFO  org.gserver.logic.LogicHandler - connected:[id: 0x004f9fdc, /127.0.0.1:53232 => /127.0.0.1:8021]
+2016-05-21 15:27:59 [New I/O  worker #5] 38::: INFO  org.gserver.logic.LogicHandler - connected:[id: 0x0029e357, /127.0.0.1:53235 => /127.0.0.1:8021]
+2016-05-21 15:28:05 [New I/O  worker #1] 115::: INFO  org.gserver.logic.LogicHandler - channelClosed:[id: 0x01833eca, /127.0.0.1:53219 :> /127.0.0.1:8021]
+2016-05-21 15:28:05 [New I/O  worker #3] 115::: INFO  org.gserver.logic.LogicHandler - channelClosed:[id: 0x00f6438d, /127.0.0.1:53229 :> /127.0.0.1:8021]
+2016-05-21 15:28:05 [New I/O  worker #5] 115::: INFO  org.gserver.logic.LogicHandler - channelClosed:[id: 0x0029e357, /127.0.0.1:53235 :> /127.0.0.1:8021]
+2016-05-21 15:28:05 [New I/O  worker #4] 115::: INFO  org.gserver.logic.LogicHandler - channelClosed:[id: 0x004f9fdc, /127.0.0.1:53232 :> /127.0.0.1:8021]
+2016-05-21 15:28:05 [New I/O  worker #2] 115::: INFO  org.gserver.logic.LogicHandler - channelClosed:[id: 0x00b8f8eb, /127.0.0.1:53226 :> /127.0.0.1:8021]
