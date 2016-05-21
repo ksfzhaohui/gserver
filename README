@@ -6,6 +6,7 @@ gserver-logic:逻辑服务器
 gserver-core:核心类
 gserver-redis:redis数据库管理
 gserver-services:逻辑类
+gserver-db:mysql数据库管理
 
 打包:
 gserver-distribute:打包程序,路径/target目录下
