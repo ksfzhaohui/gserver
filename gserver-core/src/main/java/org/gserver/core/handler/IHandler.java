@@ -11,8 +11,6 @@ public interface IHandler {
 	 * 
 	 * @param request
 	 *            客户端请求
-	 * @param response
-	 *            服务器响应
 	 */
 	abstract public void execute(Message request) throws GsException,
 			InvalidProtocolBufferException;
