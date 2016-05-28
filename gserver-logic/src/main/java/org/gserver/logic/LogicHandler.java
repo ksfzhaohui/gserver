@@ -20,7 +20,7 @@ import org.jboss.netty.channel.SimpleChannelHandler;
 import protocol.ServerClientProtocol.S2CErrorCode;
 
 /**
- * 协议处理器 1.创建sessionID 2.接受客户端的消息进行转发
+ * 协议处理器 1.创建sessionID // 2.接受客户端的消息进行转发 //
  * 
  * @author zhaohui
  * 
