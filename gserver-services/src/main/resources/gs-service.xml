@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
+	<bean id="abstractHandler" class="org.gserver.handler.AbstractHandler"
+		singleton="true" abstract="true">
+		<property name="sendMessageService" ref="sendMessageService"></property>
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+
 	<bean id="sessionService" class="org.gserver.services.SessionService">
 		<property name="redisTemplateMethod" ref="redisTemplateMethod"></property>
 	</bean>
+
+	<bean id="sendMessageService" class="org.gserver.services.SendMessageService">
+		<property name="sessionService" ref="sessionService"></property>
+	</bean>
+
 </beans>

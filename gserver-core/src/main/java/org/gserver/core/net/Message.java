@@ -30,6 +30,10 @@ public class Message {
 		this.data = data;
 	}
 
+	public int getSessionId() {
+		return header.getSessionId();
+	}
+
 	public Object getData() {
 		return data;
 	}

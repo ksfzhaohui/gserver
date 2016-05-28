@@ -80,7 +80,7 @@ public class LogicHandler extends SimpleChannelHandler {
 				setErrorMsg(ErrorCode.PACKAGE_TAG_ERROR, response);
 				return response;
 			}
-			handler.execute(request, response);
+			handler.execute(request);
 		} catch (GsException e) {
 			setErrorMsg(e.getErrorCode(), response);
 		} catch (Exception ex) {
