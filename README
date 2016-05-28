@@ -4,7 +4,7 @@ gserver-logic:逻辑服务器
 
 公用类:
 gserver-core:核心类
-gserver-redis:redis数据库管理
+gserver-redis:redis缓存管理
 gserver-services:逻辑类
 gserver-db:mysql数据库管理
 
