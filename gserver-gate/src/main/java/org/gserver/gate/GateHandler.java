@@ -7,6 +7,7 @@ import org.gserver.core.threadPool.executor.OrderedQueuePoolExecutor;
 import org.gserver.core.util.SessionChannelManager;
 import org.gserver.gate.clientServer.ConnectAppServer;
 import org.gserver.util.CommandEnumUtil;
+import org.gserver.util.SpringContainer;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ChannelStateEvent;
@@ -30,9 +31,13 @@ public class GateHandler extends SimpleChannelHandler {
 	public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e)
 			throws Exception {
 		Channel channel = e.getChannel();
+		logger.info("channelConnected:" + channel);
 		SessionChannelManager.getInstance()
 				.addChannle(channel.getId(), channel);
-		channel.getCloseFuture().addListener(new ChannelCloseListener());
+
+		ChannelCloseListener listener = (ChannelCloseListener) SpringContainer
+				.getInstance().getBeanById("channelCloseListener");
+		channel.getCloseFuture().addListener(listener);
 	}
 
 	@Override

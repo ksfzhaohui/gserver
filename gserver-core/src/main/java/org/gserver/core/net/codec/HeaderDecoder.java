@@ -28,7 +28,7 @@ import org.jboss.netty.handler.codec.frame.FrameDecoder;
 public class HeaderDecoder extends FrameDecoder {
 
 	/**头文件长度**/
-	public static final int HEAD_LENGHT = 45;
+	public static final int HEAD_LENGHT = 17;
 	/** 包头标志 **/
 	public static final byte PACKAGE_TAG = 0x01;
 
