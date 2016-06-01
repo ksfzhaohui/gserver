@@ -12,6 +12,11 @@
 			<useProjectArtifact>false</useProjectArtifact>
 			<outputDirectory>lib</outputDirectory>
 			<unpack>false</unpack>
+			<!-- 排除指定的模块 -->
+			<excludes>  
+                <exclude>com.gserver:gserver-logic</exclude>  
+                <exclude>com.gserver:gserver-gate</exclude>  
+            </excludes>  
 		</dependencySet>
 	</dependencySets>
 
