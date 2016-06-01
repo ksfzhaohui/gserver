@@ -31,6 +31,13 @@
 				<include>*</include>
 			</includes>
 		</fileSet>
+		<fileSet>
+			<directory>../gserver-distribution/shell</directory>
+			<outputDirectory></outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>
 
 		<fileSet>
 			<directory>../gserver-logic/target</directory>
